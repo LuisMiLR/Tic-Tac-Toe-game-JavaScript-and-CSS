@@ -1,0 +1,82 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');  
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Orbitron',sans-serif;
+    margin: 2rem;
+    background-color: rgb(189, 149, 110);
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(3, 6rem);
+    grid-template-rows: repeat(3, 6rem);
+    gap: 0.5rem;
+    margin: 3rem;
+}
+.case {
+    border: 1px solid rgb(53, 159, 156);
+    border-radius: 5px;
+    cursor : pointer;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    font-size: 3rem;
+    background-color: rgba(91, 182, 177, 0.728);
+
+    
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color:rgb(53, 159, 156);
+    margin-top: 2rem;
+    
+
+}
+
+p {
+margin-bottom: 1rem;
+font-size: 1.3rem;
+color: rgb(53, 159, 156);
+
+}
+
+p:first-of-type {
+    font-style: 2rem;
+    background-image: linear-gradient(
+      -225deg,
+      #2ed2c4 0%,
+      #2ba9a7 29%,
+      #d8816b 67%,
+      #33c791 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    /*text-fill-color: transparent;*/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+       
+  }
+  
+  @keyframes textclip {
+    to {
+      background-position: 200% center;
+    }
+  }
+ 
