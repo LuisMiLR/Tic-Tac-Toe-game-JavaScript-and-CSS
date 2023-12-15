@@ -29,7 +29,7 @@ Le joueur qui aligne trois de ses symboles horizontalement, verticalement ou dia
 
 ## Captures d'écran
 
-![Capture d'écran du jeu](Tic-tac -toe.png)
+
 
 
 **Auteur :** [LuisMiLR]
