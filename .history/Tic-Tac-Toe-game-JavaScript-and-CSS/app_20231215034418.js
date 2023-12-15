@@ -122,7 +122,7 @@ const jouerCase = (e) => {
   }
 };
 
-// ajouter un ecouteur d'évenement pour chaque case 
+// ajoute
 cases.forEach((el) => {
   el.addEventListener("click", jouerCase);
 });

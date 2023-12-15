@@ -92,23 +92,23 @@ const jouerCase = (e) => {
       score2.textContent = state.scoreJ2;
     }
 
-    // Réinitialiser l'état du jeu et vider les cases 
+   
     resetState();
     cases.forEach((c) => (c.textContent = ""));
   } else if (isVictoire === null) {
     // si match nul
 
     alert("Match nul !");
-    
-    // Mettre à jour le score des matchs nuls et le joueur actuel 
+
+     // Mettre à jour le score des matchs nuls et le joueur actuel 
     state.matchNul++;
     scoreNul.textContent = state.matchNul;
     joueur.textContent = "1";
 
-    // Réinitialiser l'état du jeu et vider les cases 
+    // Mettre à jour le score des matchs nuls et le joueur actuel 
     resetState();
     cases.forEach((c) => (c.textContent = ""));
-  } else if (isVictoire === false) {
+  } else if (isVctoire === false) {
     // sinon on continue le jeu
     if (state.joueurEnCours == 1) {
       state.joueurEnCours = 2;
@@ -122,7 +122,6 @@ const jouerCase = (e) => {
   }
 };
 
-// ajouter un ecouteur d'évenement pour chaque case 
 cases.forEach((el) => {
   el.addEventListener("click", jouerCase);
 });

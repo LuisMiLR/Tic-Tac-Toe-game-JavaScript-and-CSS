@@ -64,22 +64,22 @@ const verifierVictoire = () => {
   ) {
     return null; // Match nul 
   } else {
-    return false; // Pas encore de résultat 
+    return false;
   }
 };
 
-// Fonction appelée lorsqu'une case est jouée
+// Fonction pour appeler lorsqu'une case est jouée
 const jouerCase = (e) => {
   let idCase = e.target.id;
 
-  // Si la case à déjà été jouée, ne rien faire 
+  // Si case déjà jouée on ne fait rien
   if (state[idCase] !== 0) return;
 
   state[idCase] = state.joueurEnCours;
 
-  let isVictoire = verifierVictoire();
+  let isVctoire = verifierVictoire();
 
-  if (isVictoire === true) {
+  if (isVctoire === true) {
     // Si victoire
     alert("Le gagnant est le joueur " + state.joueurEnCours);
 
@@ -95,20 +95,18 @@ const jouerCase = (e) => {
     // Réinitialiser l'état du jeu et vider les cases 
     resetState();
     cases.forEach((c) => (c.textContent = ""));
-  } else if (isVictoire === null) {
+  } else if (isVctoire === null) {
     // si match nul
 
     alert("Match nul !");
-    
-    // Mettre à jour le score des matchs nuls et le joueur actuel 
+
     state.matchNul++;
     scoreNul.textContent = state.matchNul;
     joueur.textContent = "1";
 
-    // Réinitialiser l'état du jeu et vider les cases 
     resetState();
     cases.forEach((c) => (c.textContent = ""));
-  } else if (isVictoire === false) {
+  } else if (isVctoire === false) {
     // sinon on continue le jeu
     if (state.joueurEnCours == 1) {
       state.joueurEnCours = 2;
@@ -122,7 +120,6 @@ const jouerCase = (e) => {
   }
 };
 
-// ajouter un ecouteur d'évenement pour chaque case 
 cases.forEach((el) => {
   el.addEventListener("click", jouerCase);
 });

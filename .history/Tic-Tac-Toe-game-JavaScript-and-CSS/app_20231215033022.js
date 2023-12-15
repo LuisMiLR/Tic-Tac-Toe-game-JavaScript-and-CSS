@@ -34,9 +34,9 @@ const resetState = () => {
     state.c7 = 0;
     state.c8 = 0;
     state.c9 = 0;
-};
+  };
 
-  // Fonction pour vérifier s'il y a une victoire ou match nul 
+  //Fonction pour vérifier s'il y a une victoire ou match nul 
 const verifierVictoire = () => {
   if (
     (state.c1 == state.c2 && state.c2 == state.c3 && state.c1 > 0) ||
@@ -48,7 +48,6 @@ const verifierVictoire = () => {
     (state.c4 == state.c5 && state.c5 == state.c6 && state.c4 > 0) ||
     (state.c7 == state.c8 && state.c8 == state.c9 && state.c7 > 0)
   ) {
-
     console.log("winner !");
     return true;
   } else if (
@@ -62,28 +61,28 @@ const verifierVictoire = () => {
     state.c8 !== 0 &&
     state.c9 !== 0
   ) {
-    return null; // Match nul 
+    return null;
   } else {
-    return false; // Pas encore de résultat 
+    return false;
   }
 };
 
-// Fonction appelée lorsqu'une case est jouée
+//Fonction pour appeler
 const jouerCase = (e) => {
   let idCase = e.target.id;
 
-  // Si la case à déjà été jouée, ne rien faire 
+  // si case déjà jouée on ne fait rien
   if (state[idCase] !== 0) return;
 
   state[idCase] = state.joueurEnCours;
 
-  let isVictoire = verifierVictoire();
+  let isVctoire = verifierVictoire();
 
-  if (isVictoire === true) {
-    // Si victoire
+  if (isVctoire === true) {
+    // si victoire
+
     alert("Le gagnant est le joueur " + state.joueurEnCours);
 
-    // Mettre à jour les scores
     if (state.joueurEnCours == 1) {
       state.scoreJ1++;
       score1.textContent = state.scoreJ1;
@@ -92,23 +91,20 @@ const jouerCase = (e) => {
       score2.textContent = state.scoreJ2;
     }
 
-    // Réinitialiser l'état du jeu et vider les cases 
     resetState();
     cases.forEach((c) => (c.textContent = ""));
-  } else if (isVictoire === null) {
-    // si match nul
+  } else if (isVctoire === null) {
+    // si nul
 
     alert("Match nul !");
-    
-    // Mettre à jour le score des matchs nuls et le joueur actuel 
+
     state.matchNul++;
     scoreNul.textContent = state.matchNul;
     joueur.textContent = "1";
 
-    // Réinitialiser l'état du jeu et vider les cases 
     resetState();
     cases.forEach((c) => (c.textContent = ""));
-  } else if (isVictoire === false) {
+  } else if (isVctoire === false) {
     // sinon on continue le jeu
     if (state.joueurEnCours == 1) {
       state.joueurEnCours = 2;
@@ -122,7 +118,6 @@ const jouerCase = (e) => {
   }
 };
 
-// ajouter un ecouteur d'évenement pour chaque case 
 cases.forEach((el) => {
   el.addEventListener("click", jouerCase);
 });
