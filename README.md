@@ -26,11 +26,10 @@ Le joueur qui aligne trois de ses symboles horizontalement, verticalement ou dia
 3. Le jeu annonce le vainqueur ou le match nul.
 4. Les scores sont mis à jour après chaque partie.
 
-**Auteur :** [LuisMiLR]
-
-**Date de création :** [25.03.2023]
-
 ## Captures d'écran
 
 ![Capture d'écran du jeu](Tic-tac-toe.png)
 
+
+**Auteur :** [LuisMiLR]
+**Date de création :** [25.03.2023]
