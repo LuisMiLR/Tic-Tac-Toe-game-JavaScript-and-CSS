@@ -31,5 +31,5 @@ Le joueur qui aligne trois de ses symboles horizontalement, verticalement ou dia
 ![Capture d'écran du jeu](Tic-tac-toe.png)
 
 
-**Auteur :** [LuisMiLR]
-**Date de création :** [25.03.2023]
+**Auteur :** LuisMiLR
+**Date de création :** 25.03.2023
